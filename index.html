@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMP Chatbot Demo</title>
+
+    <style>
+        /* ======= Basic Page Styling ======= */
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #0C183E;
+            /* updated */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 700px;
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            color: #0C183E;
+            /* updated */
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        .logo {
+            margin: 30px 0;
+        }
+
+        footer {
+            background-color: #fff;
+            /* updated */
+            color: #0C183E;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        body {
+            padding-bottom: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Medication Management Partners – Chatbot Demo
+    </header>
+
+    <main>
+        <div class="content">
+            <h1>MMP Chatbot Demo V-1.0</h1>
+            <p>
+                This page demonstrates how the Medication Management Partners (MMP)
+                virtual assistant will appear and function when integrated into your
+                official website.
+            </p>
+
+            <p>
+                Click on the chat icon at the bottom-right corner of the page to interact with the bot.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Medication Management Partners | Demo powered by Kore.ai
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/kore-web-sdk@11.20.0/dist/umd/kore-web-sdk-umd-chat.min.js'></script>
+    <script> KoreChatSDK.chatConfig.botOptions.API_KEY_CONFIG.KEY = '41e4d5c7c70a49b688f24c5dce19be46618f56b0594246d680bca75d436e3018st29'; new KoreChatSDK.chatWindow().show(KoreChatSDK.chatConfig); </script>
+</body>
+
+</html>
