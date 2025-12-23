@@ -74,6 +74,33 @@
             padding-bottom: 60px;
         }
     </style>
+
+        <style>
+        .kore-chat-window-main-section .chat-widget-header .back-to-chat {
+            display: none !important;
+        }
+
+        .kore-chat-window-main-section .chat-widget-header .info-content-data .img-block figure {
+            width: 44px;
+            height: 44px;
+        }
+
+        /* .avatar-variations-footer .avatar-actions .avatar-bg {
+            width: 60px !important;
+            height: 60px !important;
+        } */
+
+        .avatar-variations-footer {
+            padding: 0px !important;
+
+        }
+
+        .avatar-variations-footer .avatar-actions {
+            right: 40px;
+            bottom: 40px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -100,8 +127,70 @@
         © 2025 Medication Management Partners | Demo powered by Kore.ai
     </footer>
 
-    <script src='https://cdn.jsdelivr.net/npm/kore-web-sdk@11.20.0/dist/umd/kore-web-sdk-umd-chat.min.js'></script>
-    <script> KoreChatSDK.chatConfig.botOptions.API_KEY_CONFIG.KEY = '41e4d5c7c70a49b688f24c5dce19be46618f56b0594246d680bca75d436e3018st29'; new KoreChatSDK.chatWindow().show(KoreChatSDK.chatConfig); </script>
+    <script src="https://cdn.jsdelivr.net/npm/kore-web-sdk@11.20.0/dist/umd/kore-web-sdk-umd-chat.min.js"></script>
+    <script>
+        //chat window declaration
+        var chatConfig = KoreChatSDK.chatConfig;
+        var chatWindow = KoreChatSDK.chatWindow;
+
+        //create chat window instance
+        var chatWindowInstance = new chatWindow();
+
+        //configure bot configurations
+        var botOptions = chatConfig.botOptions;
+        botOptions.API_KEY_CONFIG.KEY = '41e4d5c7c70a49b688f24c5dce19be46618f56b0594246d680bca75d436e3018st29'
+
+        /* 
+        Important Note: These keys are provided here for quick demos to generate JWT token at client side but not for Production environment.
+        Refer below document for JWT token generation at server side. Client Id and Client secret should maintained at server end.
+        https://developer.kore.ai/docs/bots/sdks/user-authorization-and-assertion/
+        **/
+
+        chatConfig.enableThemes = false;
+
+        chatConfig.branding.header.title.name = 'Marcy, Virtual Assitant'
+        chatConfig.branding.header.sub_title.name = 'Medication Management Partners';
+
+
+        // Header buttons
+        chatConfig.branding.header.buttons.help.show = false;
+        chatConfig.branding.header.buttons.live_agent.show = false;
+        chatConfig.branding.welcome_screen.show = false;
+        // chatConfig.branding.chat_bubble.proactive.show = false;
+        chatConfig.branding.chat_bubble.proactive.header = "Hi";
+        chatConfig.branding.chat_bubble.proactive.messages[0].title = "I'm Marcy, MMP's Virtual Assitant"; // Here message is array of objects
+        chatConfig.branding.chat_bubble.proactive.messages[1].title = ""; // Here message is array of objects
+        chatConfig.branding.chat_bubble.proactive.buttons[0].title = "How can I help you?"; // Here buttons is arrray of objects
+        chatConfig.branding.chat_bubble.proactive.buttons[0].type = "postback";
+        chatConfig.branding.chat_bubble.proactive.buttons[0].value = "Hi";
+
+
+        // chatConfig.branding.chat_bubble.icon.icon_url = "https://picsum.photos/id/237/30/30";
+        // chatConfig.branding.chat_bubble.icon.size = "small";
+        // chatConfig.branding.chat_bubble.icon.type = "custom";
+
+
+
+
+
+        chatConfig.branding.footer.buttons.attachment.show = false;
+        chatConfig.branding.footer.buttons.menu.show = false;
+
+        chatConfig.branding.header.icon.icon_url = "https://static.vecteezy.com/system/resources/previews/056/853/818/non_2x/call-center-agent-avatar-call-center-call-center-agent-call-center-agent-call-center-agent-vector.jpg";
+        chatConfig.branding.header.icon.type = "custom"
+
+        chatConfig.branding.body.agent_message.icon.show = true;
+        chatConfig.branding.body.agent_message.icon.icon_url = "https://static.vecteezy.com/system/resources/previews/056/853/818/non_2x/call-center-agent-avatar-call-center-call-center-agent-call-center-agent-call-center-agent-vector.jpg";
+        chatConfig.branding.body.agent_message.icon.type = "custom";
+        chatConfig.branding.body.agent_message.title.name = 'Marcy, Virtual Assitant';
+        chatConfig.branding.body.agent_message.sub_title.name = 'Medication Management Partners';
+
+
+
+        //show chatwindow
+        chatWindowInstance.show(chatConfig);
+
+    </script>
 </body>
 
 </html>
