@@ -140,15 +140,9 @@
         var botOptions = chatConfig.botOptions;
         botOptions.API_KEY_CONFIG.KEY = '41e4d5c7c70a49b688f24c5dce19be46618f56b0594246d680bca75d436e3018st29'
 
-        /* 
-        Important Note: These keys are provided here for quick demos to generate JWT token at client side but not for Production environment.
-        Refer below document for JWT token generation at server side. Client Id and Client secret should maintained at server end.
-        https://developer.kore.ai/docs/bots/sdks/user-authorization-and-assertion/
-        **/
-
         chatConfig.enableThemes = false;
 
-        chatConfig.branding.header.title.name = 'Marcy, Virtual Assitant'
+        chatConfig.branding.header.title.name = 'Marcy, Virtual Assistant'
         chatConfig.branding.header.sub_title.name = 'Medication Management Partners';
 
 
@@ -158,7 +152,7 @@
         chatConfig.branding.welcome_screen.show = false;
         // chatConfig.branding.chat_bubble.proactive.show = false;
         chatConfig.branding.chat_bubble.proactive.header = "Hi, I'm Marcy";
-        chatConfig.branding.chat_bubble.proactive.messages[0].title = "MMP's Virtual Assitant"; // Here message is array of objects
+        chatConfig.branding.chat_bubble.proactive.messages[0].title = "MMP's Virtual Assistant"; // Here message is array of objects
         chatConfig.branding.chat_bubble.proactive.messages[1].title = ""; // Here message is array of objects
         chatConfig.branding.chat_bubble.proactive.buttons[0].title = "How can I help?"; // Here buttons is arrray of objects
         // chatConfig.branding.chat_bubble.proactive.buttons[0].type = "postback";
@@ -179,7 +173,7 @@
         chatConfig.branding.body.agent_message.icon.show = true;
         chatConfig.branding.body.agent_message.icon.icon_url = "https://static.vecteezy.com/system/resources/previews/056/853/818/non_2x/call-center-agent-avatar-call-center-call-center-agent-call-center-agent-call-center-agent-vector.jpg";
         chatConfig.branding.body.agent_message.icon.type = "custom";
-        chatConfig.branding.body.agent_message.title.name = 'Marcy, Virtual Assitant';
+        chatConfig.branding.body.agent_message.title.name = 'Marcy, Virtual Assistant';
         chatConfig.branding.body.agent_message.sub_title.name = 'Medication Management Partners';
 
 
