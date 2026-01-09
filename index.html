@@ -108,48 +108,73 @@
         © 2025 Medication Management Partners | Developer Version
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/kore-web-sdk@11.20.0/dist/umd/kore-web-sdk-umd-chat.min.js"></script>
-    <script>
-        var chatConfig = KoreChatSDK.chatConfig;
-        var chatWindow = KoreChatSDK.chatWindow;
+<script src="https://cdn.jsdelivr.net/npm/kore-web-sdk@11.20.0/dist/umd/kore-web-sdk-umd-chat.min.js"></script>
 
-        var chatWindowInstance = new chatWindow();
+<script>
+  /* ------------------------------------
+     Inject CSS to avoid fixed header overlap
+     ------------------------------------ */
+  (function () {
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = `
+      .kore-chat-window-main-section {
+        top: unset !important;
+        bottom: 20px !important;
+        max-height: 75vh !important;
+        height: auto !important;
+        z-index: 9999 !important;
+      }
+    `;
+    document.head.appendChild(style);
+  })();
 
-        var botOptions = chatConfig.botOptions;
-        botOptions.API_KEY_CONFIG.KEY = '705f1c3359a848dbad0e4772b024c545af6b62ac7cb54ba6b28815488c75689estbc'
+  /* ------------------------------------
+     Kore Chat Configuration
+     ------------------------------------ */
+  var chatConfig = KoreChatSDK.chatConfig;
+  var chatWindow = KoreChatSDK.chatWindow;
+  var chatWindowInstance = new chatWindow();
 
-        chatConfig.enableThemes = false;
+  var botOptions = chatConfig.botOptions;
+  botOptions.API_KEY_CONFIG.KEY = '705f1c3359a848dbad0e4772b024c545af6b62ac7cb54ba6b28815488c75689est';
 
-        chatConfig.branding.header.title.name = 'Marcy, Virtual Assistant'
-        chatConfig.branding.header.sub_title.name = 'Medication Management Partners';
+  chatConfig.enableThemes = false;
 
-        chatConfig.branding.header.buttons.help.show = false;
-        chatConfig.branding.header.buttons.live_agent.show = true;
-        chatConfig.branding.welcome_screen.show = false;
-        chatConfig.branding.chat_bubble.proactive.header = "Hi, I'm Marcy";
-        chatConfig.branding.chat_bubble.proactive.messages[0].title = "MMP's Virtual Assistant"; 
-        chatConfig.branding.chat_bubble.proactive.messages[1].title = "";
-        chatConfig.branding.chat_bubble.proactive.buttons[0].title = "How can I help?";
+  chatConfig.branding.header.title.name = 'Marcy, Virtual Assistant';
+  chatConfig.branding.header.sub_title.name = 'Medication Management Partners';
 
-        chatConfig.branding.chat_bubble.icon.icon_url = "https://www.mmprx.com/wp-content/uploads/2026/01/Marcy-4-blue-sweater.png";
-        chatConfig.branding.chat_bubble.icon.size = "small";
-        chatConfig.branding.chat_bubble.icon.type = "custom";
+  chatConfig.branding.header.buttons.help.show = false;
+  chatConfig.branding.header.buttons.live_agent.show = true;
+  chatConfig.branding.welcome_screen.show = false;
 
-        chatConfig.branding.footer.buttons.attachment.show = false;
-        chatConfig.branding.footer.buttons.menu.show = false;
+  chatConfig.branding.chat_bubble.proactive.header = "Hi, I'm Marcy";
+  chatConfig.branding.chat_bubble.proactive.messages[0].title = "MMP's Virtual Assistant";
+  chatConfig.branding.chat_bubble.proactive.messages[1].title = "";
+  chatConfig.branding.chat_bubble.proactive.buttons[0].title = "How can I help?";
 
-        chatConfig.branding.header.icon.icon_url = "https://www.mmprx.com/wp-content/uploads/2026/01/Marcy-4-blue-sweater.png";
-        chatConfig.branding.header.icon.type = "custom"
+  chatConfig.branding.chat_bubble.icon.icon_url =
+    "https://www.mmprx.com/wp-content/uploads/2026/01/Marcy-4-blue-sweater.png";
+  chatConfig.branding.chat_bubble.icon.size = "small";
+  chatConfig.branding.chat_bubble.icon.type = "custom";
 
-        chatConfig.branding.body.agent_message.icon.show = true;
-        chatConfig.branding.body.agent_message.icon.icon_url = "https://www.mmprx.com/wp-content/uploads/2026/01/Marcy-4-blue-sweater.png";
-        chatConfig.branding.body.agent_message.icon.type = "custom";
-        chatConfig.branding.body.agent_message.title.name = 'Marcy, Virtual Assistant';
-        chatConfig.branding.body.agent_message.sub_title.name = 'Medication Management Partners';
+  chatConfig.branding.footer.buttons.attachment.show = false;
+  chatConfig.branding.footer.buttons.menu.show = false;
 
-        chatWindowInstance.show(chatConfig);
+  chatConfig.branding.header.icon.icon_url =
+    "https://www.mmprx.com/wp-content/uploads/2026/01/Marcy-4-blue-sweater.png";
+  chatConfig.branding.header.icon.type = "custom";
 
-    </script>
+  chatConfig.branding.body.agent_message.icon.show = true;
+  chatConfig.branding.body.agent_message.icon.icon_url =
+    "https://www.mmprx.com/wp-content/uploads/2026/01/Marcy-4-blue-sweater.png";
+  chatConfig.branding.body.agent_message.icon.type = "custom";
+  chatConfig.branding.body.agent_message.title.name = 'Marcy, Virtual Assistant';
+  chatConfig.branding.body.agent_message.sub_title.name = 'Medication Management Partners';
+
+  chatWindowInstance.show(chatConfig);
+</script>
+
 </body>
 
 </html>
