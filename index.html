@@ -111,27 +111,21 @@
 <script src="https://cdn.jsdelivr.net/npm/kore-web-sdk@11.20.0/dist/umd/kore-web-sdk-umd-chat.min.js"></script>
 
 <script>
-  /* ------------------------------------
-     Inject CSS to avoid fixed header overlap
-     ------------------------------------ */
+
   (function () {
     var style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = `
       .kore-chat-window-main-section {
-        top: unset !important;
-        bottom: 20px !important;
-        max-height: 75vh !important;
+        max-height: calc(100vh - 140px) !important; /* leaves space for floating header */
         height: auto !important;
-        z-index: 9999 !important;
+        top: auto !important;
+        bottom: 20px !important;
       }
     `;
     document.head.appendChild(style);
   })();
 
-  /* ------------------------------------
-     Kore Chat Configuration
-     ------------------------------------ */
   var chatConfig = KoreChatSDK.chatConfig;
   var chatWindow = KoreChatSDK.chatWindow;
   var chatWindowInstance = new chatWindow();
