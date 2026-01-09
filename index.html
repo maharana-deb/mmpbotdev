@@ -126,6 +126,25 @@
         top: auto !important;
         bottom: 20px !important;
       }
+
+        /* Container */
+      .kore-chat-bubble,
+      .kore-chat-bubble img {
+        width: 64px !important;
+        height: 64px !important;
+      }
+
+      /* Image styling */
+      .kore-chat-bubble img {
+        border-radius: 50% !important; /* fully round */
+        object-fit: cover !important;
+      }
+
+      /* Optional: soften look */
+      .kore-chat-bubble {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+      }
+
     `;
     document.head.appendChild(style);
   })();
